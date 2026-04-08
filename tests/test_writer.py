@@ -9,6 +9,7 @@ import pytest
 import zarr
 from dask import persist
 from numcodecs import Blosc
+from ome_zarr import NgffImage, NgffMultiscales
 from ome_zarr_models.v04 import HCS as Models04HCS
 from ome_zarr_models.v04 import Image as Models04Image
 from ome_zarr_models.v04 import Labels as Models04Labels
