@@ -815,6 +815,14 @@ class OMEZarrMultiscale(OMEZarrMultiscaleBase):
                     f"number of channels ({n_channels})"
                 )
 
+        # Make sure that all channel descriptors line up with the data dimensions
+        for param in [channel_names, channel_colors, contrast_limits]:
+            if param is not None and len(param) != n_channels:
+                raise ValueError(
+                    f"Length of {param} ({len(param)}) does not match "
+                    f"number of channels ({n_channels})"
+                )
+
         channel_metadata = []
         for i in range(n_channels):
             if channel_names is not None:
