@@ -450,7 +450,6 @@ def _get_version(group: zarr.Group) -> str:
         If version cannot be found in expected locations.
     """
     # Try v0.5+ format first
-    print(group)
     ome_attrs = group.attrs.get("ome")
     if isinstance(ome_attrs, dict) and "version" in ome_attrs:
         return ome_attrs["version"]
